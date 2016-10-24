@@ -1,0 +1,45 @@
+using Xunit;
+// add using statement for the classes that you want to test here.  For example, using Nutrition;
+
+// start by writing tests that pass first.
+// Then, write your code.  If the test fails, then you know that the code broke the test.
+// Run all test to ensure that things continue working.
+// Remember Red, green, refactor: Red = test for points of failure; green = make test pass; refactor = clean up code; repeat
+
+public class SimpleTests {
+
+    // public void TestingAdd() => 
+    //     Assert.Equal(10, Calculator.Add(5,5));
+
+    // public void TestingAdd2() => 
+    //     Assert.Equal(16, Calculator.Add(5,11));
+
+    /*
+        other Assert methods:
+        Equal(a,b)
+        True(a)
+        False(a)
+    */
+    
+
+    public void CreateNutrition() {
+        //create new object n of type nutrition
+        Nutrition n = new Nutrition();
+        // check to see if object was created successufully
+        // one way to test object creation is to test for the existance of a public property like total_hits.
+        // since it's a int, it's default value is 0.  So, we test by using the Assert.Equal() method and pass it two arguments:
+        // n.total_hits and the integer zero.  If they are equal, our test passes and the code continues.
+        // other tests that can be performed are to test for max_score or the list of hits.
+        Assert.Equal(n.total_hits, 0);
+    }
+
+    public void getAPIUrl(){
+        // test MashapeAPI: create a new object
+        MashapeAPI m = new MashapeAPI();
+        // test to see if the urlFormat method works by passing it tacos.
+        // this is a simple test that check to make sure something is returned.
+        // can also test to make sure the correct url is generated.
+        Assert.True(m.urlFormat("TACOS") != "");
+    }
+
+}
